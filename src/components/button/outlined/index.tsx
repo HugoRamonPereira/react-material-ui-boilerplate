@@ -1,13 +1,18 @@
-import { Button } from '@mui/material';
+import * as S from './styles';
 import SendIcon from '@mui/icons-material/Send';
 
 export function BtnOutlined() {
   return (
     <>
-      <Button variant='outlined' size='medium'>
+      <S.OutlinedBtn
+        variant='outlined'
+        size='medium'
+        disableRipple
+        disableElevation
+        endIcon={<SendIcon />}
+      >
         Send
-        <SendIcon />
-      </Button>
+      </S.OutlinedBtn>
     </>
   );
 }

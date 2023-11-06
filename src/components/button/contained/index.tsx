@@ -1,13 +1,18 @@
-import { Button } from '@mui/material';
+import * as S from './styles';
 import SendIcon from '@mui/icons-material/Send';
 
 export function BtnContained() {
   return (
     <>
-      <Button variant='contained' size='medium'>
+      <S.ContainedBtn
+        variant='contained'
+        size='medium'
+        disableRipple
+        disableElevation
+        endIcon={<SendIcon />}
+      >
         Send
-        <SendIcon />
-      </Button>
+      </S.ContainedBtn>
     </>
   );
 }
