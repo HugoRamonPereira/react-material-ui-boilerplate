@@ -1,0 +1,32 @@
+import { PropsWithChildren, useState } from 'react';
+import * as S from './styles';
+import Stack from '@mui/material/Stack';
+import SaveIcon from '@mui/icons-material/Save';
+import AppleSpinner from '../../../../../assets/apple-spinner.svg';
+
+type SpinnerBtnProps = PropsWithChildren<{
+  variant: 'contained' | 'outlined' | 'text'
+}>
+
+export function SpinnerBtn({ children, variant }: SpinnerBtnProps) {
+  const [loading, setLoading] = useState(false);
+
+  function handleClick() {
+    setLoading(true);
+  }
+
+  return (
+    <Stack display='block' direction="row" spacing={2}>
+      <S.LoadingBtn
+        variant={variant}
+        fullWidth
+        onClick={handleClick}
+        loading={loading}
+        loadingIndicator={<img src={AppleSpinner} width={35} height={35} alt='spinner' />}
+        endIcon={<SaveIcon />}
+      >
+        {children}
+      </S.LoadingBtn>
+    </Stack>
+  );
+}

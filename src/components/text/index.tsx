@@ -1,10 +1,13 @@
 import { Typography } from '@mui/material';
+import { PropsWithChildren } from 'react';
 
-export function Text() {
+type TextProps = PropsWithChildren;
+
+export function Text({ children }: TextProps) {
   return (
     <div>
       <Typography>
-        Material Text Sample
+        {children}
       </Typography>
     </div>
   );
