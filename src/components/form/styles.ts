@@ -5,12 +5,13 @@ export const FormTitle = styled(Typography)({
   fontSize: '2rem',
   fontWeight: 'bold',
   color: green[500],
-  marginBottom: '1rem'
+  margin: '0.1rem 0px 2rem',
+  textAlign: 'center'
 });
 
 export const FormContainer = styled(Box)({
   display: 'flex',
-  flexDirection: 'column',
+  flexDirection: 'column'
 });
 
 export const FormCanvas = styled(Paper)({

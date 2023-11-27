@@ -1,25 +1,27 @@
-import { TextField } from '@mui/material';
+import { TextField, TextFieldProps } from '@mui/material';
 
-type InputTextProps = {
+type InputTextProps = TextFieldProps & {
   variant: 'outlined' | 'filled' | 'standard';
   label: string;
   helperText: string;
-  type: 'text' | 'password' | 'email'
-}
+  type: 'text' | 'password' | 'email';
+};
 
 export function InputText({
   type,
   variant,
   label,
-  helperText
+  helperText,
+  ...props
 }: InputTextProps) {
-  return(
+  return (
     <TextField
       type={type}
       variant={variant}
       label={label}
       helperText={helperText}
       fullWidth
+      {...props}
     />
   );
 }

@@ -6,9 +6,7 @@ type TextProps = PropsWithChildren;
 export function Text({ children }: TextProps) {
   return (
     <div>
-      <Typography>
-        {children}
-      </Typography>
+      <Typography>{children}</Typography>
     </div>
   );
 }
