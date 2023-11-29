@@ -1,18 +1,24 @@
+import { PropsWithChildren } from 'react';
 import * as S from './styles';
-import SendIcon from '@mui/icons-material/Send';
+import { ButtonProps } from '@mui/material';
+import { EnterIcon } from '@radix-ui/react-icons';
 
-export function BtnContained() {
+type BtnContainedProps = ButtonProps &
+  PropsWithChildren<{
+    size: 'small' | 'medium' | 'large';
+  }>;
+
+export function BtnContained({ children, size, ...props }: BtnContainedProps) {
   return (
-    <>
-      <S.ContainedBtn
-        variant='contained'
-        size='medium'
-        disableRipple
-        disableElevation
-        endIcon={<SendIcon />}
-      >
-        Send
-      </S.ContainedBtn>
-    </>
+    <S.ContainedBtn
+      variant='contained'
+      size={size}
+      disableRipple
+      disableElevation
+      endIcon={<EnterIcon />}
+      {...props}
+    >
+      {children}
+    </S.ContainedBtn>
   );
 }

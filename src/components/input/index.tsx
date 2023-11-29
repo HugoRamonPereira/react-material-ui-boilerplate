@@ -1,9 +1,10 @@
 import { TextField, TextFieldProps } from '@mui/material';
+import { ReactNode } from 'react';
 
 type InputTextProps = TextFieldProps & {
   variant: 'outlined' | 'filled' | 'standard';
   label: string;
-  helperText: string;
+  helperText?: ReactNode;
   type: 'text' | 'password' | 'email';
 };
 
